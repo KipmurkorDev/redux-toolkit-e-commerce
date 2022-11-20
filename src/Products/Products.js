@@ -34,9 +34,7 @@ export default function Products() {
               <button
                 onClick={() => {
                   dispatch(addToCart(item));
-                  
-                  dispatch(getTotal(item.id));
-
+                  dispatch(getTotal(item.id))
                   console.log(item);
                 }}
               >

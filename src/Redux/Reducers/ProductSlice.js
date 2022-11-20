@@ -3,7 +3,6 @@ import axios from "axios";
 
 const initialState = {
   products: [],
-  isLoading: false,
 };
 
 export const getproducts = createAsyncThunk("Products", async () => {
@@ -38,7 +37,7 @@ export const addproducts = createAsyncThunk(
   getproducts()
 );
 export const productsSlice = createSlice({
-  name: "products",
+  name: "product",
   initialState,
   reducers: {},
   extraReducers: {

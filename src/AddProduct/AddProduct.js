@@ -47,6 +47,7 @@ export default function AddProduct() {
 
   console.log(formInputs);
   return (
+    <div className="conatiner">
     <div className="content">
       
       <h1> Add Product</h1>
@@ -102,6 +103,7 @@ export default function AddProduct() {
       />
       </div>
       
+    </div>
     </div>
   );
 }

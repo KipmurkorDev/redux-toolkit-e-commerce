@@ -1,8 +1,12 @@
+.conatiner {
+  height: 100vh;
+  width: 90vw;
+}
 .content {
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 30px 35px 40px;
   border-radius: 10px;
-  height: 80vh;
+  height: 75vh;
   width: 35vw;
   background-color: #e4ddf4;
   margin-top: 20px;
@@ -18,13 +22,12 @@ textarea {
   text-align: left;
   margin: 10px;
   border-radius: 5px;
-
 }
-.content > input{
+.content > input {
   width: 70%;
   height: 20px;
 }
-.content > textarea{
+.content > textarea {
   width: 90%;
 }
 .content > label {
@@ -36,7 +39,7 @@ textarea {
 .btn > input {
   width: 30%;
   height: 5%;
-  padding-left:50px ;
+  padding-left: 50px;
   background-color: #4caf50;
   color: white;
   padding: 10px;

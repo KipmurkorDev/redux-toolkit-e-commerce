@@ -9,10 +9,15 @@
     gap: 20px;
 }
 .product-2{
-    padding-top: 10px;
+    padding: 10px;
     border: 1px solid blue;
 }
 .img-1{
     width: 400px;
     height: 300px;
+}
+.product-2 button{
+    cursor: pointer;
+    background-color: green;
+    border-radius: 4px;
 }

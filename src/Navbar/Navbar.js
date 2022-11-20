@@ -17,7 +17,10 @@ export default function Navbar() {
         <button>Products</button>
       </Link>
       <Link to="/cart">
-        <button>Cart {Totalquantity}</button>
+        <button>Cart <sup>{Totalquantity}</sup></button>
+      </Link>
+      <Link to="/about">
+        <button>About</button>
       </Link>
       <Link to="/">
         <button>Logout</button>

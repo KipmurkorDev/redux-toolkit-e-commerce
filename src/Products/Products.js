@@ -35,7 +35,6 @@ export default function Products() {
                 onClick={() => {
                   dispatch(addToCart(item));
                   dispatch(getTotal(item.id))
-                  console.log(item);
                 }}
               >
                 Add Cart

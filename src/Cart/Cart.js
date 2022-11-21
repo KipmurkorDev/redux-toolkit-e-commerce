@@ -7,6 +7,7 @@ import {
   decrement,
   deletCart,
   getTotal,
+  clear,
 } from "../Redux/Reducers/CartSlice";
 
 export const CartProduct = () => {
@@ -61,6 +62,7 @@ export const CartProduct = () => {
             </div>
           ))
         )}
+        <button onClick={() => dispatch(clear())} style ={{color:"red"}}> clear</button>
       </div>
       <div className="total"> Total Amount:{TotalAmount}</div>
     </div>

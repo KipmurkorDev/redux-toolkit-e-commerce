@@ -36,6 +36,16 @@ export const addproducts = createAsyncThunk(
   },
   getproducts()
 );
+export const deleProduct = createAsyncThunk(
+  "postProducts",
+  async (id) => {
+    const response = await axios
+      .delete(`https://e-commerce-b5db9-default-rtdb.firebaseio.com/Products/${id}.json`)
+      .then((data) => data.json());
+    return response;
+  },
+  getproducts()
+);
 export const productsSlice = createSlice({
   name: "product",
   initialState,

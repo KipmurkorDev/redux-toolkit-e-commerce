@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart, getTotal } from "../Redux/Reducers/CartSlice";
 import "./Prducts.css";
-import { getproducts } from "../Redux/Reducers/ProductSlice";
+import { getproducts, deleProduct } from "../Redux/Reducers/ProductSlice";
 import { useSelector } from "react-redux";
 
 export default function Products() {
@@ -12,7 +12,7 @@ export default function Products() {
   const { products } = useSelector((state) => state.products);
   useEffect(() => {
     dispatch(getproducts());
-  }, [dispatch]);
+  }, [dispatch, products]);
 
   return (
     <div className="products-grid">
@@ -36,8 +36,15 @@ export default function Products() {
                   dispatch(addToCart(item));
                   dispatch(getTotal(item.id))
                 }}
-              >
+             className="add-cart" >
                 Add Cart
+              </button>
+              <button
+                onClick={() => {
+                  dispatch(deleProduct(item.id))
+                }}
+                style={{background: "red"}}>
+                Delete
               </button>
             </div>
           </div>

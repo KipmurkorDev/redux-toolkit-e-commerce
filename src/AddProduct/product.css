@@ -1,12 +1,12 @@
 .conatiner {
-  height: 100vh;
+  height: 80%;
   width: 90vw;
 }
 .content {
-  margin-top: 40px;
-  padding: 30px 35px 40px;
+  margin-top: 10px;
+  padding-top: 20px;
   border-radius: 10px;
-  height: 75vh;
+  height: 70%;
   width: 35vw;
   background-color: #e4ddf4;
   margin-top: 20px;

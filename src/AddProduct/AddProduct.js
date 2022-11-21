@@ -3,7 +3,6 @@ import "./product.css";
 import { addproducts } from '../Redux/Reducers/ProductSlice'
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import Navbar from '../Navbar/Navbar'
 export default function AddProduct() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -14,7 +13,6 @@ export default function AddProduct() {
     image: "",
     discount_rate: 1,
   });
-  console.log(formInputs);
   const handleInputChange = (e) => {
     setFormInputs((prev) => ({
       ...prev,
@@ -45,7 +43,6 @@ export default function AddProduct() {
     });
   };
 
-  console.log(formInputs);
   return (
     <div className="conatiner">
     <div className="content">

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Navbar.css";
 export default function Navbar() {
-  const Totalquantity = useSelector((state) => state.carts.Totalquantity);
-  console.log(Totalquantity);
+  let {Totalquantity, cartItem} = useSelector((state) => state.carts);
+  Totalquantity=cartItem.reduce((sum, item)=>sum + item.quantity, 0)
   return (
     <div className="header">
       <Link to="/addproduct">

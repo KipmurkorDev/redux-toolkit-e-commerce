@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./Cart.css";
 import {
-  increament,
-  decrement,
+  updatCart,
   deletCart,
-  getTotal,
-  clear,
+  getCart,
+  clear
 } from "../Redux/Reducers/CartSlice";
 
 export const CartProduct = () => {
-  const { cartItem, TotalAmount } = useSelector((state) => state.carts);
+  let { cartItem, TotalAmount } = useSelector((state) => state.carts);
   const dispatch = useDispatch();
+  console.log(cartItem);
+  useEffect(() => {
+    dispatch(getCart());
+  }, [dispatch, cartItem]);
+
+  TotalAmount = cartItem.reduce((sum, item)=>sum + item.amount, 0)
+
   return (
     <div className="grid-3">
       <div className="cart">
@@ -28,7 +34,7 @@ export const CartProduct = () => {
                 <p>Discount: {item.discount_rate}%</p>
                 <p>Description: {item.description}</p>
                 <div>
-                  <button onClick={() => dispatch(deletCart(item.id))}>
+                  <button onClick={() => dispatch(deletCart(item))}>
                     remove
                   </button>
                 </div>
@@ -37,22 +43,30 @@ export const CartProduct = () => {
               <div className="data-1">
                 <button
                   onClick={() => {
-                    dispatch(increament(item.id));
-                    dispatch(getTotal(item.id));
+                    let newcart = {
+                      ...item,
+                      quantity: item.quantity + 1,
+                      amount: item.quantity * item.price,
+                    };
+                    dispatch(updatCart(newcart));
                   }}
                 >
                   +
                 </button>
                 <p>Quantity: {item.quantity}</p>
-                <p>Total: {item.Amount}</p>
+                <p>Total: {item.amount}</p>
 
                 <button
                   onClick={() => {
+                    let newcart = {
+                      ...item,
+                      quantity: item.quantity -1,
+                      amount: item.quantity * item.price,
+                    };
                     if (item.quantity === 1) {
-                      dispatch(deletCart(item.id));
+                      dispatch(deletCart(item));
                     } else {
-                      dispatch(decrement(item.id));
-                      dispatch(getTotal(item.id));
+                      dispatch(updatCart(newcart));
                     }
                   }}
                 >
@@ -62,7 +76,10 @@ export const CartProduct = () => {
             </div>
           ))
         )}
-        <button onClick={() => dispatch(clear())} style ={{color:"red"}}> clear</button>
+        <button onClick={() => dispatch(clear())} style={{ color: "red" }}>
+          {" "}
+          clear
+        </button>
       </div>
       <div className="total"> Total Amount:{TotalAmount}</div>
     </div>

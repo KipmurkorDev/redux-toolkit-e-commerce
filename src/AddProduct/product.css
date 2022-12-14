@@ -4,11 +4,14 @@
 }
 .content {
   margin-top: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  padding-left: 20px;
   border-radius: 10px;
-  height: 70%;
+  height: 66%;
   width: 35vw;
-  background-color: #e4ddf4;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin-top: 20px;
   position: absolute;
   top: 50%;
@@ -38,7 +41,7 @@ textarea {
 
 .btn > input {
   width: 30%;
-  height: 5%;
+  height: 3%;
   padding-left: 50px;
   background-color: #4caf50;
   color: white;

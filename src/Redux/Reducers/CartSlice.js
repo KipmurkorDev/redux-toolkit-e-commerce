@@ -30,6 +30,10 @@ export const getCart = createAsyncThunk("carts", async () => {
   return cartItem;
 });
 
+
+
+
+
 export const addCart = createAsyncThunk(
   "postCart",
   async (data) => {
@@ -43,7 +47,8 @@ export const addCart = createAsyncThunk(
     return response;
   },
   getCart()
-);
+)
+#great and better coding 
 export const updatCart = createAsyncThunk(
   "updatecart",
   async (data) => {
